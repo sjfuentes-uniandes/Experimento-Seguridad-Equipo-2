@@ -1,13 +1,34 @@
 version: "3.9"
 services:
-  clientes:
-    build: ./clientes
-    ports:
-      - "5001:5001"
-    depends_on:
-      - autorizador
+  #clientes:
+  #  build: ./clientes
+  #  ports:
+  #    - "5001:5001"
+  #  depends_on:
+  #    - autorizador
 
   autorizador:
     build: ./autorizador
+    container_name: servicio_autorizador
     ports:
-      - "5002:5002"
+      - "5001:5000"
+    environment:
+      - JWT_SECRET_KEY=mi_clave_secreta_ultra_segura_2025
+    networks:
+      - app_network
+
+  logistica:
+    build: ./logistica
+    container_name: servicio_logistica
+    ports:
+      - "5002:5000"
+    environment:
+      - JWT_SECRET_KEY=mi_clave_secreta_ultra_segura_2025
+    depends_on:
+      - autorizador
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
