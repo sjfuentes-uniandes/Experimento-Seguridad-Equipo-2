@@ -12,6 +12,10 @@ AUTHORIZED_USERS = {
     "logistica_user": {
         "password": "password123",
         "role": "logistics"
+    },
+    "invitado_user": {
+        "password": "inv123",
+        "role": "guest"
     }
 }
 
@@ -27,8 +31,11 @@ def login():
     user = AUTHORIZED_USERS.get(username)
 
     if user and user["password"] == password:
-        identity_data = {"username": username, "role": user["role"]}
-        access_token = create_access_token(identity=identity_data, expires_delta=datetime.timedelta(minutes=15))
+        access_token = create_access_token(
+            identity=username,
+            additional_claims={"role": user["role"]},
+            expires_delta=datetime.timedelta(minutes=15)
+        )
         return jsonify(access_token=access_token), 200
     else:
         notify_admin(username)

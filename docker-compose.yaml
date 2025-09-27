@@ -1,12 +1,6 @@
 version: "3.9"
-services:
-  #clientes:
-  #  build: ./clientes
-  #  ports:
-  #    - "5001:5001"
-  #  depends_on:
-  #    - autorizador
 
+services:
   autorizador:
     build: ./autorizador
     container_name: servicio_autorizador
@@ -26,6 +20,20 @@ services:
       - JWT_SECRET_KEY=mi_clave_secreta_ultra_segura_2025
     depends_on:
       - autorizador
+    networks:
+      - app_network
+
+  clientes:
+    build: ./clientes
+    container_name: servicio_clientes
+    ports:
+      - "5003:5000"
+    environment:
+      - AUTH_URL=http://servicio_autorizador:5000/login
+      - LOGISTICS_URL=http://servicio_logistica:5000/routes
+    depends_on:
+      - autorizador
+      - logistica
     networks:
       - app_network
 

@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from flask_restful import Api, Resource
-from flask_jwt_extended import jwt_required, get_jwt_identity, JWTManager
+from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt, JWTManager
 import os
 
 app = Flask(__name__)
@@ -18,7 +18,8 @@ class RouteResource(Resource):
     @jwt_required()
     def get(self):
         current_user = get_jwt_identity()
-        if current_user and current_user.get("role") == "logistics":
+        claims = get_jwt()
+        if claims.get("role") == "logistics":
             return jsonify(routes=TRUCK_ROUTES)
         else:
             return {"msg": "Acceso no autorizado para este rol"}, 403
