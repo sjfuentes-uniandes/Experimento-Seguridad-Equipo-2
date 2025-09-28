@@ -7,3 +7,46 @@
 {"timestamp": "2025-09-28T16:15:25.785149", "type": "ALERT", "source": "Autorizador", "message": "Intento de inicio de sesi\u00f3n fallido", "details": "Intento realizado por el ususario atacante"}
 {"timestamp": "2025-09-28T16:15:25.799446", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario invitado_user"}
 {"timestamp": "2025-09-28T16:15:25.821556", "type": "ALERTA", "source": "Logistica", "message": "Acceso DENEGADO por intento con rol no autorizado", "details": "Intento de acceso por rol guest"}
+{"timestamp": "2025-09-28T18:29:52.061341", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T18:29:52.077772", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T18:29:52.117407", "type": "ALERT", "source": "Autorizador", "message": "Intento de inicio de sesion fallido", "details": "Intento realizado por el ususario atacante"}
+{"timestamp": "2025-09-28T18:29:52.119632", "type": "ALERT", "source": "Autorizador", "message": "Credenciales incorrectas", "details": "Token denegado al usuario atacante"}
+{"timestamp": "2025-09-28T18:29:52.150329", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario invitado_user"}
+{"timestamp": "2025-09-28T18:29:52.168380", "type": "ALERTA", "source": "Logistica", "message": "Acceso DENEGADO por intento con rol no autorizado", "details": "Intento de acceso por rol guest"}
+{"timestamp": "2025-09-28T18:29:52.224555", "type": "ALERT", "source": "Clientes", "message": "Autenticaci\u00f3n fallida", "details": {}}
+{"timestamp": "2025-09-28T18:29:52.257211", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T18:29:52.265212", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T18:29:52.280496", "type": "AUDIT", "source": "Clientes", "message": "Accediendo a la informaci\u00f3n de las rutas", "details": {}}
+{"timestamp": "2025-09-28T20:06:11.161101", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T20:06:11.180547", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T20:06:11.227233", "type": "ALERT", "source": "Autorizador", "message": "Intento de inicio de sesion fallido", "details": "Intento realizado por el ususario atacante"}
+{"timestamp": "2025-09-28T20:06:11.229772", "type": "ALERT", "source": "Autorizador", "message": "Credenciales incorrectas", "details": "Token denegado al usuario atacante"}
+{"timestamp": "2025-09-28T20:06:11.263931", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario invitado_user"}
+{"timestamp": "2025-09-28T20:06:11.285656", "type": "ALERTA", "source": "Logistica", "message": "Acceso DENEGADO por intento con rol no autorizado", "details": "Intento de acceso por rol guest"}
+{"timestamp": "2025-09-28T20:06:12.319445", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido con retardo simulado", "details": "Retardo simulado. Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T20:06:12.323800", "type": "ALERT", "source": "Clientes", "message": "Retardo en los mensajes detectado! Duraci\u00f3n de la solicitud con el autorizador: 1013.81ms", "details": {"user": "logistica_user", "status": "Sistema bajo posible ataque"}}
+{"timestamp": "2025-09-28T20:06:12.357398", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T20:06:12.367571", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T20:06:12.383427", "type": "AUDIT", "source": "Clientes", "message": "Accediendo a la informaci\u00f3n de las rutas", "details": {}}
+{"timestamp": "2025-09-28T20:17:41.185890", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T20:17:41.205485", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T20:17:41.257445", "type": "ALERT", "source": "Autorizador", "message": "Intento de inicio de sesion fallido", "details": "Intento realizado por el ususario atacante"}
+{"timestamp": "2025-09-28T20:17:41.266166", "type": "ALERT", "source": "Autorizador", "message": "Credenciales incorrectas", "details": "Token denegado al usuario atacante"}
+{"timestamp": "2025-09-28T20:17:41.318261", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario invitado_user"}
+{"timestamp": "2025-09-28T20:17:41.333999", "type": "ALERTA", "source": "Logistica", "message": "Acceso DENEGADO por intento con rol no autorizado", "details": "Intento de acceso por rol guest"}
+{"timestamp": "2025-09-28T20:17:42.374939", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido con retardo simulado", "details": "Retardo simulado. Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T20:17:42.379945", "type": "ALERT", "source": "Clientes", "message": "Retardo en los mensajes detectado! Duraci\u00f3n de la solicitud con el autorizador: 1014.63ms", "details": {"user": "logistica_user", "status": "Sistema bajo posible ataque"}}
+{"timestamp": "2025-09-28T20:17:42.415829", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T20:17:42.426538", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T20:17:42.443891", "type": "AUDIT", "source": "Clientes", "message": "Accediendo a la informaci\u00f3n de las rutas", "details": {}}
+{"timestamp": "2025-09-28T20:19:58.421659", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T20:19:58.436247", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T20:19:58.479029", "type": "ALERT", "source": "Autorizador", "message": "Intento de inicio de sesion fallido", "details": "Intento realizado por el ususario atacante"}
+{"timestamp": "2025-09-28T20:19:58.481229", "type": "ALERT", "source": "Autorizador", "message": "Credenciales incorrectas", "details": "Token denegado al usuario atacante"}
+{"timestamp": "2025-09-28T20:19:58.514554", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario invitado_user"}
+{"timestamp": "2025-09-28T20:19:58.533209", "type": "ALERTA", "source": "Logistica", "message": "Acceso DENEGADO por intento con rol no autorizado", "details": "Intento de acceso por rol guest"}
+{"timestamp": "2025-09-28T20:19:59.573196", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido con retardo simulado", "details": "Retardo simulado. Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T20:19:59.577585", "type": "ALERT", "source": "Clientes", "message": "Retardo en los mensajes detectado! Duraci\u00f3n de la solicitud con el autorizador: 1023.03ms", "details": {"user": "logistica_user", "status": "Sistema bajo posible ataque"}}
+{"timestamp": "2025-09-28T20:19:59.613473", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T20:20:00.628689", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T20:20:00.633415", "type": "ALERT", "source": "Clientes", "message": "Retardo en los mensajes detectado! Duraci\u00f3n de la solicitud con log\u00edstica: 1012.1161937713623ms", "details": "Sistema bajo posible ataque"}

@@ -3,6 +3,7 @@ import json
 
 BASE_URL_AUTH = "http://localhost:5001"
 BASE_URL_ROUTES = "http://localhost:5002"
+BASE_URL_CLIENTES = "http://localhost:5003"
 
 def print_response(name, response):
     print(f"--- {name} ---")
@@ -67,3 +68,24 @@ headers_guest = {"Authorization": f"Bearer {access_token_guest}"}
 response_routes_guest = requests.get(f"{BASE_URL_ROUTES}/routes", headers=headers_guest)
 print_response("5 - Intento de Acceso a Rutas con Rol No Autorizado", response_routes_guest)
 print("NOTA: Este escenario valida que los usuarios con rol distinto a 'logistics' no pueden acceder a las rutas.\n")
+
+# ESCENARIO 6: Tiempos de espera excesivos entre mensajes
+print(">>> INICIANDO ESCENARIO 6: TIEMPOS DE ESPERA EXCESIVOS\n")
+
+login_payload = {
+    "username": "logistica_user",
+    "password": "password123"
+}
+
+print("La llamada interna al Autorizador está forzada a tardar 1000ms, activando la ALERTA.\n")
+
+response_lag_detected_auth = requests.post(f"{BASE_URL_CLIENTES}/get_routes_slow_auth", json=login_payload)
+print_response("6.1 - Solicitud de Rutas VÍA CLIENTES (Retardo Forzado en autorizador)", response_lag_detected_auth)
+
+print("La llamada interna al Autorizador está forzada a tardar 1000ms, activando la ALERTA.\n")
+
+response_lag_detected_logistics = requests.post(f"{BASE_URL_CLIENTES}/get_routes_slow_logistics", json=login_payload)
+print_response("6.2 - Solicitud de Rutas VÍA CLIENTES (Retardo Forzado en logistica)", response_lag_detected_logistics)
+
+print("NOTA: El código de estado esperado es 503 o 500, y el cuerpo debe contener el mensaje de 'Retardo detectado'.")
+print("NOTA: Revise 'event_log.txt' para ver el registro de la ALERTA de retardo.", flush=True)

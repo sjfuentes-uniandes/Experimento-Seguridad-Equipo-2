@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt, JWTManager
 import os
-import datetime
+import datetime, time
 import json
 
 app = Flask(__name__)
@@ -46,6 +46,26 @@ class RouteResource(Resource):
             writeLog("ALERTA", "Logistica", "Acceso DENEGADO por intento con rol no autorizado", f"Intento de acceso por rol {user_role}")
             return {"msg": "Acceso no autorizado para este rol"}, 403
 
+class SlowRouteResource(Resource):
+    @jwt_required()
+    def get(self):
+
+        LAG_TIME = 1
+    
+        print(f"SIMULACIÓN: Retardo excesivo activo. Pausando por {LAG_TIME} segundos...", flush=True)
+        time.sleep(LAG_TIME) 
+
+        current_user = get_jwt_identity()
+        claims = get_jwt()
+        user_role = claims.get("role")
+        if user_role == "logistics":
+            writeLog("AUDIT", "Logistica", "Acceso a rutas concedido con retardo simulado")
+            return jsonify(routes=TRUCK_ROUTES)
+        else:
+            writeLog("ALERTA", "Logistica", "Acceso DENEGADO por intento con rol no autorizado", f"Intento de acceso por rol {user_role}")
+            return {"msg": "Acceso no autorizado para este rol"}, 403
+
+api.add_resource(SlowRouteResource, '/slow_routes')
 api.add_resource(RouteResource, '/routes')
 
 if __name__ == '__main__':
