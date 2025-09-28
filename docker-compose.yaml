@@ -4,6 +4,8 @@ services:
   autorizador:
     build: ./autorizador
     container_name: servicio_autorizador
+    volumes:
+      - ./event_log.txt:/app/event_log.txt
     ports:
       - "5001:5000"
     environment:

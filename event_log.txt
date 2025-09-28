@@ -1,2 +1,9 @@
 {"timestamp": "2025-09-28T03:25:52.483981", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
 {"timestamp": "2025-09-28T03:25:52.533878", "type": "ALERTA", "source": "Logistica", "message": "Acceso DENEGADO por intento con rol no autorizado", "details": "Intento de acceso por rol guest"}
+{"timestamp": "2025-09-28T16:13:10.258737", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T16:13:10.316044", "type": "ALERTA", "source": "Logistica", "message": "Acceso DENEGADO por intento con rol no autorizado", "details": "Intento de acceso por rol guest"}
+{"timestamp": "2025-09-28T16:15:25.725200", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario logistica_user"}
+{"timestamp": "2025-09-28T16:15:25.745727", "type": "AUDIT", "source": "Logistica", "message": "Acceso a rutas concedido", "details": {}}
+{"timestamp": "2025-09-28T16:15:25.785149", "type": "ALERT", "source": "Autorizador", "message": "Intento de inicio de sesi\u00f3n fallido", "details": "Intento realizado por el ususario atacante"}
+{"timestamp": "2025-09-28T16:15:25.799446", "type": "AUDIT", "source": "Autorizador", "message": "Token de acceso concedido", "details": "Token concedido al usuario invitado_user"}
+{"timestamp": "2025-09-28T16:15:25.821556", "type": "ALERTA", "source": "Logistica", "message": "Acceso DENEGADO por intento con rol no autorizado", "details": "Intento de acceso por rol guest"}
