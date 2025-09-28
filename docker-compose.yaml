@@ -14,6 +14,8 @@ services:
   logistica:
     build: ./logistica
     container_name: servicio_logistica
+    volumes:
+      - ./event_log.txt:/app/event_log.txt
     ports:
       - "5002:5000"
     environment:
@@ -26,6 +28,8 @@ services:
   clientes:
     build: ./clientes
     container_name: servicio_clientes
+    volumes:
+      - ./event_log.txt:/app/event_log.txt
     ports:
       - "5003:5000"
     environment:

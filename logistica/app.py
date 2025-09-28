@@ -2,6 +2,8 @@ from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt, JWTManager
 import os
+import datetime
+import json
 
 app = Flask(__name__)
 
@@ -14,14 +16,34 @@ TRUCK_ROUTES = [
     {"id": 2, "truck": "T-02", "destination": "Punto de Entrega Norte", "route": ["Autopista Norte", "Calle 127"]}
 ]
 
+LOG_FILE = "/app/event_log.txt"
+
+def writeLog(event_type, source, message, details=None):
+    timestamp = datetime.datetime.now().isoformat()
+    log = {
+        "timestamp": timestamp,
+        "type": event_type,
+        "source": source,
+        "message": message,
+        "details": details if details else {}
+    }
+    try:
+        with open(LOG_FILE, 'a') as file:
+            file.write(json.dumps(log) + '\n')
+    except Exception as e:
+        print(f"ERROR ESCRITURA: No fue posible escribir en el archivo del log {LOG_FILE}: {e}", flush=True)
+
 class RouteResource(Resource):
     @jwt_required()
     def get(self):
         current_user = get_jwt_identity()
         claims = get_jwt()
-        if claims.get("role") == "logistics":
+        user_role = claims.get("role")
+        if user_role == "logistics":
+            writeLog("AUDIT", "Logistica", "Acceso a rutas concedido")
             return jsonify(routes=TRUCK_ROUTES)
         else:
+            writeLog("ALERTA", "Logistica", "Acceso DENEGADO por intento con rol no autorizado", f"Intento de acceso por rol {user_role}")
             return {"msg": "Acceso no autorizado para este rol"}, 403
 
 api.add_resource(RouteResource, '/routes')
